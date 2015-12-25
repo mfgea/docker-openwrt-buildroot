@@ -13,7 +13,7 @@ the user `openwrt` was created. The buildroot can be found in
 
 To run a shell in the buildroot, execute the following command:
 ```sh
-docker run -t -i alljoynsville/openwrt-buildroot:14.07 bash
+docker run -t -i alljoynsville/openwrt-buildroot:15.05 bash
 ```
 
 More information on how to use this buildroot can be found on the
