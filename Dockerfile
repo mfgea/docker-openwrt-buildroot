@@ -10,6 +10,6 @@ USER openwrt
 RUN cd /home/openwrt && \
     git clone https://github.com/openwrt/openwrt.git && \
     cd openwrt && \
-    openwrt/scripts/feeds update && \
+    ./scripts/feeds update && \
     rm -rf tmp
 WORKDIR /home/openwrt/openwrt
