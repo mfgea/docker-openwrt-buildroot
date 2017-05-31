@@ -12,13 +12,12 @@ the user `openwrt` was created. The buildroot can be found in
 `/home/openwrt/openwrt`.
 
 To run a shell in the buildroot, execute the following command:
+
 ```sh
-docker run -t -i mfgea/docker-openwrt-buildroot:14.07 bash
+docker run -t -i -v $HOME/openwrt:/home/openwrt/openwrt mfgea/docker-openwrt-buildroot:nosource sudo -iu openwrt bash
 ```
-or
-```sh
-docker run -t -i mfgea/docker-openwrt-buildroot:15.05 bash
-```
+
+This will not download source, but it will use a monted share for the buildroot ($HOME/openwrt)
 
 More information on how to use this buildroot can be found on the
 [OpenWRT wiki](http://wiki.openwrt.org/doc/howto/build).

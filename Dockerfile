@@ -10,7 +10,5 @@ RUN chown -R openwrt:openwrt /home/openwrt
 
 USER openwrt
 WORKDIR /home/openwrt
-RUN git clone -b chaos_calmer https://github.com/openwrt/openwrt.git
+RUN mkdir openwrt
 WORKDIR /home/openwrt/openwrt
-RUN ./scripts/feeds update
-RUN rm -rf tmp
