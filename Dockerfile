@@ -6,11 +6,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -yqq git-core subversion buil
 RUN apt-get clean
 RUN useradd -m openwrt
 RUN echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
+RUN chown -R openwrt:openwrt /home/openwrt
 
 USER openwrt
-RUN cd /home/openwrt
+WORKDIR /home/openwrt
 RUN git clone -b chaos_calmer https://github.com/openwrt/openwrt.git
-RUN cd openwrt
+WORKDIR /home/openwrt/openwrt
 RUN ./scripts/feeds update
 RUN rm -rf tmp
-WORKDIR /home/openwrt/openwrt
