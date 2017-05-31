@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update && \
     echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 USER openwrt
 RUN cd /home/openwrt && \
-    git clone https://github.com/openwrt/openwrt.git && \
+    git clone -b chaos_calmer https://github.com/openwrt/openwrt.git && \
     cd openwrt && \
     ./scripts/feeds update && \
     rm -rf tmp
